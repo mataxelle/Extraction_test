@@ -1,3 +1,4 @@
+import csv
 from bs4 import BeautifulSoup
 
 with open("index.html", "r") as file:
@@ -45,9 +46,17 @@ for index, product in enumerate(products, start=1):
     }
 """
 
-print(all_products)
+# print(all_products)
 
-# Create e txt file
+# Create a txt file
 fichier = open("hello.txt", "w")
 fichier.write("My new file title")
 fichier.close()
+
+# Open csv file
+with open('products.csv', mode = 'r') as file:
+   # add a heading with DictReader
+   csv_reader = csv.DictReader(file)
+   for line in csv_reader:
+      # print(line)
+      print(line['Name'] + ' price is ' + line['Price'] + ' and is description is ' +  line['Description'])
