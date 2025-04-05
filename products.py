@@ -46,3 +46,8 @@ for index, product in enumerate(products, start=1):
 """
 
 print(all_products)
+
+# Create e txt file
+fichier = open("hello.txt", "w")
+fichier.write("My new file title")
+fichier.close()
